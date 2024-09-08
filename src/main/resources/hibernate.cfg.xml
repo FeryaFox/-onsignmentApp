@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:${user.home}/products.db</property>
+
+        <!-- Hibernate Dialect for SQLite -->
+        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Format SQL -->
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Automatically creates or updates tables based on Entity annotations -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Entity mappings -->
+        <mapping class="ru.feryafox.consignmentapp.ProductRepository.Product"/>
+
+    </session-factory>
+</hibernate-configuration>
